@@ -33,12 +33,6 @@ form.addEventListener("submit",async(event:Event)=>{
     const photofile = photoInput.files? photoInput.files[0]:null;
 
     let photoBase64 = '';
-    // if(photofile){
-    //     photoBase64 = await fileToBase64(photofile)
-
-    //     localStorage.setItem("resumePhoto", photoBase64)
-    //     resumePhoto.src = photoBase64;
-    // }
 
     if (photofile) {
         photoBase64 = await fileToBase64(photofile);
@@ -51,7 +45,7 @@ form.addEventListener("submit",async(event:Event)=>{
 
 
 
-    document.querySelector("#container")?.classList.add("hidden")
+    document.querySelector(".container")?.classList.add("hidden")
     resumePage.classList.remove("hidden");
 
     resumeName.textContent = name1;

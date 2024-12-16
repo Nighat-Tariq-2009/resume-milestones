@@ -35,11 +35,6 @@ form.addEventListener("submit", (event) => __awaiter(void 0, void 0, void 0, fun
     const photoInput = document.getElementById("photo");
     const photofile = photoInput.files ? photoInput.files[0] : null;
     let photoBase64 = '';
-    // if(photofile){
-    //     photoBase64 = await fileToBase64(photofile)
-    //     localStorage.setItem("resumePhoto", photoBase64)
-    //     resumePhoto.src = photoBase64;
-    // }
     if (photofile) {
         photoBase64 = yield fileToBase64(photofile);
         localStorage.setItem("resumePhoto", photoBase64);
@@ -48,7 +43,7 @@ form.addEventListener("submit", (event) => __awaiter(void 0, void 0, void 0, fun
     else {
         resumePhoto.src = "default-placeholder.png"; // Replace with your default image path
     }
-    (_a = document.querySelector("#container")) === null || _a === void 0 ? void 0 : _a.classList.add("hidden");
+    (_a = document.querySelector(".container")) === null || _a === void 0 ? void 0 : _a.classList.add("hidden");
     resumePage.classList.remove("hidden");
     resumeName.textContent = name1;
     resumeEmail.textContent = `Email : ${email}`;
